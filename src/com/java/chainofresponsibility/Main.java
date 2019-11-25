@@ -19,8 +19,10 @@ public class Main {
        fc.add(new HtmlFilter()).add(new SensitityFilter());
        FilterChain fc1 = new FilterChain();
        fc1.add(new FaceFilter()).add(new URLFilter());
-       fc1.doFilter(msg);
-        fc.doFilter(msg);
+      /* fc1.doFilter(msg);
+        fc.doFilter(msg);*/
+      fc.add(fc1);
+      fc.doFilter(msg);
         System.out.println(msg);
     }
 }
