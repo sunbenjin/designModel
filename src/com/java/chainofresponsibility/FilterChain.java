@@ -10,9 +10,10 @@ public class FilterChain implements Filter{
               filters.add(filter);
               return this;
     }
-    public void doFilter (Msg m){
+    public boolean doFilter (Msg m){
         for(Filter f: filters){
-            f.doFilter(m);
+            if(!f.doFilter(m))return false;
         }
+        return true;
     }
 }
