@@ -3,6 +3,11 @@ package com.java.iterator.iterator3;
 public class Main {
     public static void main(String[] args) {
 
+        Collection_ lists = new ArrayList_();
+        for(int i=0; i<10; i++){
+            lists.add(new String("s"+i));
+        }
+        System.out.println(lists.size());
     }
 }
 interface Collection_{
